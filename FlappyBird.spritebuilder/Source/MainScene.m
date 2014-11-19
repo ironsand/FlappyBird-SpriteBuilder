@@ -56,6 +56,13 @@
 
 - (void)didLoadFromCCB {
     self.userInteractionEnabled = TRUE;
+
+    CGPoint _cloudParallaxRatio;
+    CGPoint _bushParallaxRatio;
+    
+    CCNode *_parallaxContainer;
+    CCParallaxNode *_parallaxBackground;
+    
     
     _grounds = @[_ground1, _ground2];
     _clouds = @[_cloud1, _cloud2];
@@ -80,11 +87,6 @@
         [_parallaxBackground addChild:cloud z:0 parallaxRatio:_cloudParallaxRatio positionOffset:offset];
     }
     
-    CGPoint _cloudParallaxRatio;
-    CGPoint _bushParallaxRatio;
-    
-    CCNode *_parallaxContainer;
-    CCParallaxNode *_parallaxBackground;
     
     for (CCNode *ground in _grounds) {
         // set collision txpe
