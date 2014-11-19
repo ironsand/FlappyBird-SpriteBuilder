@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>13</integer>
+	<integer>14</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -148,6 +148,138 @@
 						<array/>
 					</dict>
 				</array>
+			</dict>
+			<dict>
+				<key>UUID</key>
+				<integer>13</integer>
+				<key>baseClass</key>
+				<string>CCNode</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>parallaxContainer</string>
+				<key>memberVarAssignmentName</key>
+				<string>_// move and loop the bushes
+for (CCNode *bush in _bushes) {
+    // move the bush
+    bush.position = ccp(bush.position.x - 
+                    (character.physicsBody.velocity.x * delta), bush.position.y);
+
+    // if the left corner is one complete width off the screen, 
+    // move it to the right
+    if (bush.position.x &lt;= (-1 * bush.contentSize.width)) {
+        bush.position = ccp(bush.position.x + 
+                        2 * bush.contentSize.width, bush.position.y);
+    }
+}
+
+// move and loop the clouds
+for (CCNode *cloud in _clouds) {
+    // move the cloud
+    cloud.position = ccp(cloud.position.x - 
+                     (character.physicsBody.velocity.x * delta), cloud.position.y);
+
+    // if the left corner is one complete width off the screen, 
+    // move it to the right
+    if (cloud.position.x &lt;= (-1 * cloud.contentSize.width)) {
+        cloud.position = ccp(cloud.position.x + 
+                         2 * cloud.contentSize.width, cloud.position.y);
+    }
+_// move and loop the bushes
+for (CCNode *bush in _bushes) {
+    // move the bush
+    bush.position = ccp(bush.position.x - 
+                    (character.physicsBody.velocity.x * delta), bush.position.y);
+
+    // if the left corner is one complete width off the screen, 
+    // move it to the right
+    if (bush.position.x &lt;= (-1 * bush.contentSize.width)) {
+        bush.position = ccp(bush.position.x + 
+                        2 * bush.contentSize.width, bush.position.y);
+    }
+}
+
+// move and loop the clouds
+for (CCNode *cloud in _clouds) {
+    // move the cloud
+    cloud.position = ccp(cloud.position.x - 
+                     (character.physicsBody.velocity.x * delta), cloud.position.y);
+
+    // if the left corner is one complete width off the screen, 
+    // move it to the right
+    if (cloud.position.x &lt;= (-1 * cloud.contentSize.width)) {
+        cloud.position = ccp(cloud.position.x + 
+                         2 * cloud.contentSize.width, cloud.position.y);
+    }
+_parallaxContainer</string>
+				<key>memberVarAssignmentType</key>
+				<integer>1</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>name</string>
+						<key>type</key>
+						<string>StringSimple</string>
+						<key>value</key>
+						<string>parallaxContainer</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>contentSize</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+							<integer>0</integer>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -580,8 +712,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1708,7 +1838,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.93333333730697632</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
